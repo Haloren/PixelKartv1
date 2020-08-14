@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  driver: MyString
+  color: MyString
+  body: MyString
+  wheels: MyString
+  garage: one
+  user: one
+
+two:
+  driver: MyString
+  color: MyString
+  body: MyString
+  wheels: MyString
+  garage: two
+  user: two
