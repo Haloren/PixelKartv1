@@ -1,0 +1,13 @@
+<h1> Login </h1>
+
+<%= form_for :user do |f|%>
+
+    <%= f.email_field :email, placeholder: "Email", required: true %>
+    <%= f.password_field :password, placeholder: "Password", required: true %>
+
+    <%= submit_tag "Login" %>
+<% end %>
+
+<h4 style="color:blue"> Login with Google Link goes here </h4>
+
+<h4><%= link_to "Sign Up", signup_path %></h4>
