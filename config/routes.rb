@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get '/' => 'sessions#index'
+  root 'sessions#index'
   
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
   
-  get '/signup' => 'users#new'
+  get '/signup', to: 'users#new'
+
+  delete '/logout', to: 'sessions#destroy'
 
   resources :garages
   resources :reviews
