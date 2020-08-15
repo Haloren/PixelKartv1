@@ -1,4 +1,4 @@
-<h1> Sign up</h1>
+<h1> Signup </h1>
 
 <%= form_for (@user) do |f| %>
     <%= f.text_field :name, placeholder: "Name", required: true %>
@@ -6,3 +6,5 @@
     <%= f.password_field :password, placeholder: "Password", required: true %>
     <%= submit_tag "Signup"%>
 <% end %>
+
+<h4><%= link_to "Login", login_path %></h4>
