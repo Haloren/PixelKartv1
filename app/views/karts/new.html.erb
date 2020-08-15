@@ -1,1 +1,13 @@
-<h1> Make a Kart </h1>
+<h1> Build a Kart </h1>
+
+<%= form_for :kart do |f| %>
+
+    <%= f.collection_select :driver, Kart::DRIVERS, :to_s, :to_s, :include_blank => true %>
+    <%= f.collection_select :color, Kart::COLORS, :to_s, :to_s, :include_blank => true %>
+    <%= f.collection_select :body, Kart::BODIES, :to_s, :to_s, :include_blank => true %>
+    <%= f.collection_select :wheels, Kart::WHEELS, :to_s, :to_s, :include_blank => true %>
+
+    <%= f.submit "Build this Kart"%>
+<% end %>
+
+<hr>
