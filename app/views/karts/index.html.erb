@@ -1,0 +1,7 @@
+<h1> Choose a Kart </h1>
+
+<ol>
+    <% @karts.each do |kart| %>
+        <li> <%= link_to kart.name, kart_path(kart.id) %></li>
+    <% end %>
+</ol>

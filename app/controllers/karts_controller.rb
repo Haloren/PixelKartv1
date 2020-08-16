@@ -19,7 +19,17 @@ class KartsController < ApplicationController
         end
     end
 
+    def index
+        @user = current_user
+
+        @karts = Kart.all
+    end
+
     def show
+        @user = current_user
+
+        # byebug
+        @kart = Kart.find_by(id: params[:id])
     end
 
 private

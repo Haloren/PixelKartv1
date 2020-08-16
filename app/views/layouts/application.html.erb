@@ -14,7 +14,8 @@
       <% if logged_in? %>
         <nav>
           | <%= link_to "Home", user_path(@user) %>
-          | <%= link_to "Builder", new_kart_path %>
+          | <%= link_to "Build a Kart", new_kart_path %>
+          | <%= link_to "Rate a Kart", karts_path %>
           |
         </nav>
       <% end %>

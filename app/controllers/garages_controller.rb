@@ -1,2 +1,3 @@
 class GaragesController < ApplicationController
+
 end
