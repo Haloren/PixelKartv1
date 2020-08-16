@@ -1,7 +1,12 @@
-<h1> Want to check out some Kart Reviews? </h1>
+<h1> Check out some Kart Reviews Below </h1>
+<%# sort by highest rating first %>
 <ol>
-    <% @reviews.each do |review| %>
-        <li><%= review.rating %> - <%= review.content %>  </li>
+    <% @reviews.sort_by(&:rating).reverse.each do |review| %>
+        <li> 
+        <%= review.kart.name %> |
+        <%= review.rating %> |
+        <%= review.content %> | 
+        </li>
     <% end %>
 </ol>
 
