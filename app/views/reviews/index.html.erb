@@ -1,2 +1,8 @@
-<h1> All Kart Reviews </h1>
+<h1> Want to check out some Kart Reviews? </h1>
+<ol>
+    <% @reviews.each do |review| %>
+        <li><%= review.rating %> - <%= review.content %>  </li>
+    <% end %>
+</ol>
 
+<hr>
