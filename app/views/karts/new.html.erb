@@ -6,11 +6,11 @@
 
 <%= form_for :kart do |f| %>
 
-    <%= f.text_field :name, placeholder: "Name", required: true %>
-    <%= f.collection_select :driver, Kart::DRIVERS, :to_s, :to_s, :include_blank => true %>
-    <%= f.collection_select :color, Kart::COLORS, :to_s, :to_s, :include_blank => true %>
-    <%= f.collection_select :body, Kart::BODIES, :to_s, :to_s, :include_blank => true %>
-    <%= f.collection_select :wheels, Kart::WHEELS, :to_s, :to_s, :include_blank => true %>
+    <%= f.text_field :name, placeholder: "Kart Name", required: true %>
+    <%= f.collection_select :driver, Kart::DRIVERS, :to_s, :to_s, include_blank: "Driver" %>
+    <%= f.collection_select :color, Kart::COLORS, :to_s, :to_s, include_blank: "Color" %>
+    <%= f.collection_select :body, Kart::BODIES, :to_s, :to_s, include_blank: "Body" %>
+    <%= f.collection_select :wheels, Kart::WHEELS, :to_s, :to_s, include_blank: "Wheels" %>
 
     <p>
      Select a Garage:

@@ -20,7 +20,6 @@ class KartsController < ApplicationController
     end
 
     def show
-
     end
 
 private
