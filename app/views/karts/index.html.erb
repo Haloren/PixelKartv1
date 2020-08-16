@@ -2,6 +2,9 @@
 
 <ol>
     <% @karts.each do |kart| %>
-        <li> <%= link_to kart.name, kart_path(kart.id) %></li>
+        <li> 
+            <%= link_to kart.name, kart_path(kart.id) %> |
+            <%= link_to "Review this kart", new_kart_review_path(kart.id) %> |
+        </li>
     <% end %>
 </ol>
