@@ -3,6 +3,13 @@ class ReviewsController < ApplicationController
     def index
         @user = current_user
     end
+
+    def show
+        @user = current_user
+        # byebug
+        @review = Review.find_by(id: params[:id])
+        # byebug
+    end
     
     def new
         @user = current_user
@@ -13,8 +20,13 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        @review = Review.create(review_params)
-        redirect_to review_path(@review)
+        @review = Review.new(review_params)
+        @review.user_id = session[:user_id]
+        if @review.save #is this valid? then save
+            redirect_to review_path(@review)
+        else
+            render :new
+        end        
     end
 
 private

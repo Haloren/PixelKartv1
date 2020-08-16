@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+    def show 
+        # byebug
+        @user = User.find_by(id: params[:id]) 
+        redirect_to '/' if !@user
+    end
+
     def new
         @user = User.new
     end
@@ -14,12 +20,6 @@ class UsersController < ApplicationController
             flash[:message] = @user.errors.full_messages
             render :new
         end
-    end
-
-    def show 
-        # byebug
-        @user = User.find_by(id: params[:id]) 
-        redirect_to '/' if !@user
     end
 
 private

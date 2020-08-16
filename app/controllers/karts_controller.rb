@@ -1,5 +1,18 @@
 class KartsController < ApplicationController
 
+    def index
+        @user = current_user
+
+        @karts = Kart.all
+    end
+
+    def show
+        @user = current_user
+
+        # byebug
+        @kart = Kart.find_by(id: params[:id])
+    end
+
     def new
         @user = current_user
 
@@ -18,19 +31,6 @@ class KartsController < ApplicationController
             flash[:message] = @kart.errors.full_messages
             render :new
         end
-    end
-
-    def index
-        @user = current_user
-
-        @karts = Kart.all
-    end
-
-    def show
-        @user = current_user
-
-        # byebug
-        @kart = Kart.find_by(id: params[:id])
     end
 
 private
