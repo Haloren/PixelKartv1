@@ -1,5 +1,9 @@
 <h1> Build a Kart </h1>
 
+<div class="flashmessage">
+    <%= flash[:message] %>
+</div>
+
 <%= form_for :kart do |f| %>
 
     <%= f.collection_select :driver, Kart::DRIVERS, :to_s, :to_s, :include_blank => true %>
@@ -15,7 +19,7 @@
     <p>
     Create a new Garage:
         <%= f.fields_for :garage do |g| %>
-            <%= g.text_field :name, placeholder: "Garage Name" %>
+            <%= g.text_field :name %>
         <% end %>
     </p>
 

@@ -8,7 +8,15 @@ class KartsController < ApplicationController
     end
 
     def create
+        @kart = Kart.new(kart_params)
+        @kart.user_id = session[:user_id]
 
+        if @kart.save
+            redirect_to kart_path(@kart)
+        else
+            flash[:message] = @kart.errors.full_messages
+            render :new
+        end
     end
 
 private
