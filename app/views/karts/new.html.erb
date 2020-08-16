@@ -7,7 +7,19 @@
     <%= f.collection_select :body, Kart::BODIES, :to_s, :to_s, :include_blank => true %>
     <%= f.collection_select :wheels, Kart::WHEELS, :to_s, :to_s, :include_blank => true %>
 
-    <%= f.submit "Build this Kart"%>
+    <p>
+     Select a Garage:
+        <%= f.collection_select :garage_id, Garage.all, :id, :name, include_blank: "Pick a Garage" %>
+    </p>
+
+    <p>
+    Create a new Garage:
+        <%= f.fields_for :garage do |g| %>
+            <%= g.text_field :name, placeholder: "Garage Name" %>
+        <% end %>
+    </p>
+
+    <%= f.submit "Build this Kart" %>
 <% end %>
 
 <hr>
