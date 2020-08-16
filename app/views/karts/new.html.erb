@@ -6,6 +6,7 @@
 
 <%= form_for :kart do |f| %>
 
+    <%= f.text_field :name, placeholder: "Name", required: true %>
     <%= f.collection_select :driver, Kart::DRIVERS, :to_s, :to_s, :include_blank => true %>
     <%= f.collection_select :color, Kart::COLORS, :to_s, :to_s, :include_blank => true %>
     <%= f.collection_select :body, Kart::BODIES, :to_s, :to_s, :include_blank => true %>
@@ -19,7 +20,7 @@
     <p>
     Create a new Garage:
         <%= f.fields_for :garage do |g| %>
-            <%= g.text_field :name %>
+            <%= g.text_field :name, placeholder: "Garage Name", required: true %>
         <% end %>
     </p>
 

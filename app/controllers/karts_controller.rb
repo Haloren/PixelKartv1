@@ -19,10 +19,14 @@ class KartsController < ApplicationController
         end
     end
 
+    def show
+
+    end
+
 private
 
     def kart_params
-        params.require(:kart).permit(:driver, :color, :body, :wheels, :garage_id, garage_attributes: [:name])
+        params.require(:kart).permit(:name, :driver, :color, :body, :wheels, :garage_id, garage_attributes: [:name])
     end
 
 end

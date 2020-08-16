@@ -1,6 +1,7 @@
 class CreateKarts < ActiveRecord::Migration[6.0]
   def change
     create_table :karts do |t|
+      t.string :name
       t.string :driver
       t.string :color
       t.string :body

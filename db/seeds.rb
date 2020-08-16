@@ -12,9 +12,9 @@ User.create(name: "Name2", email: "email2@email2.com", password: "password")
 Garage.create(name: "Garage1")
 Garage.create(name: "Garage2")
 
-Kart.create(driver: "Driver1", color: "Color1", body: "Body1", wheels: "Wheels1", garage_id: Garage.first.id, user_id: User.first.id)
-Kart.create(driver: "Driver2", color: "Color2", body: "Body2", wheels: "Wheels2", garage_id: Garage.first.id, user_id: User.second.id)
-Kart.create(driver: "Driver2", color: "Color3", body: "Body3", wheels: "Wheels3", garage_id: Garage.first.id, user_id: User.second.id)
+Kart.create(name: "Kart1", driver: "Driver1", color: "Color1", body: "Body1", wheels: "Wheels1", garage_id: Garage.first.id, user_id: User.first.id)
+Kart.create(name: "Kart2", driver: "Driver2", color: "Color2", body: "Body2", wheels: "Wheels2", garage_id: Garage.first.id, user_id: User.second.id)
+Kart.create(name: "Kart3", driver: "Driver2", color: "Color3", body: "Body3", wheels: "Wheels3", garage_id: Garage.first.id, user_id: User.second.id)
 
 Review.create(rating: 1, content: "Content 1", user_id: User.first.id, kart_id: Kart.first.id)
 Review.create(rating: 2, content: "Content 2", user_id: User.second.id, kart_id: Kart.second.id)

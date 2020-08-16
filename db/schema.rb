@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_08_14_224751) do
   end
 
   create_table "karts", force: :cascade do |t|
+    t.string "name"
     t.string "driver"
     t.string "color"
     t.string "body"

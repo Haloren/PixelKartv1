@@ -7,6 +7,7 @@ class Kart < ApplicationRecord
 
   accepts_nested_attributes_for :garage
 
+  validates :name, presence: true, uniqueness: true
   validates :driver, presence: true
   validates :color, presence: true
   validates :body, presence: true
