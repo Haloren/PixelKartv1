@@ -5,7 +5,7 @@ class KartsController < ApplicationController
 
         @kart = Kart.new
         # byebug
-        @kart.build_garage #undefined method build?
+        @kart.build_garage #Doesn't work? this should be a nested attribute?
     end
 
     def create
