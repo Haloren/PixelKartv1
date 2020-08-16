@@ -4,7 +4,8 @@ class KartsController < ApplicationController
         @user = current_user
 
         @kart = Kart.new
-        @kart.build_garage
+        # byebug
+        @kart.build_garage #undefined method build?
     end
 
     def create

@@ -1,0 +1,11 @@
+<h1> Reviews New </h1>
+
+<%= form_for(@review) do |f|%>
+
+    <%= f.collection_select :rating, Review::RATING, :to_s, :to_s, include_blank: "Rate from 1-4" %>
+    <%= f.text_area :content, placeholder: "Type your review here...." %>
+
+    <%= hidden_field %>
+
+    <%= submit_tag "Submit" %>
+<% end %>
