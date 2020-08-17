@@ -31,6 +31,7 @@ class ReviewsController < ApplicationController
         if @review.save #is this valid? then save
             redirect_to review_path(@review)
         else
+            flash[:message] = @user.errors.full_messages
             render :new
         end        
     end

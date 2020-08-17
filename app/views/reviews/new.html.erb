@@ -1,5 +1,9 @@
 <h1> Review <%= @review.kart.name %> </h1>
 
+<div class="flashmessage">
+    <%= flash[:message] %>
+</div>
+
 <%= form_for(@review) do |f|%>
 
     <%= f.collection_select :rating, Review::RATING, :to_i, :to_i, include_blank: "Rate from 1-4" %>
