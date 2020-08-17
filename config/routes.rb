@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
   root 'sessions#index'
-    # if logged_in?
-    #   redirect_to users_path(@user)
-    # else
-    #   redirect_to login_path
-    # end
   
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
