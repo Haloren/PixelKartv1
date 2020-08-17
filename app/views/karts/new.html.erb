@@ -4,7 +4,7 @@
     <%= flash[:message] %>
 </div>
 
-<%= form_for :kart do |f| %>
+<%= form_for @kart do |f| %>
 
     <%= f.text_field :name, placeholder: "Kart Name", required: true %>
     <%= f.collection_select :driver, Kart::DRIVERS, :to_s, :to_s, include_blank: "Driver" %>
@@ -20,7 +20,7 @@
     <p>
     Create a new Garage:
         <%= f.fields_for :garage do |g| %>
-            <%= g.text_field :name, placeholder: "Garage Name", required: true %>
+            <%= g.text_field :name, placeholder: "Garage Name" %>
         <% end %>
     </p>
 
