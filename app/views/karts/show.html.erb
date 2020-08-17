@@ -7,8 +7,11 @@
 |
 </h3>
 
+<h3> Reviews for <%= @kart.name %>: </h3>
 <ul>
 <% @kart.reviews.sort_by(&:rating).reverse.each do |review| %>
     <li><%= review.rating %> - <%= review.content %></li>
 <% end %>
 </ul>
+
+<hr>
