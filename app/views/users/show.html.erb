@@ -1,6 +1,11 @@
 <h1> Welcome <%= @user.name %> </h1>
 
-<h3> Your karts: </h3>
+<h3>
+Your karts: 
+<% if @user.karts == [] %>
+    <%= link_to "Click here to build your first Kart.", new_kart_path %>
+<% end %>
+</h3>
 
 <ul>
 <% @user.karts.each do |kart| %>
