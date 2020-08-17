@@ -1,1 +1,14 @@
 <h1> <%= @kart.name %> </h1>
+<h3> 
+| <%= @kart.driver %> 
+| <%= @kart.color %> 
+| <%= @kart.body %> 
+| <%= @kart.wheels %> 
+|
+</h3>
+
+<ul>
+<% @kart.reviews.sort_by(&:rating).reverse.each do |review| %>
+    <li><%= review.rating %> - <%= review.content %></li>
+<% end %>
+</ul>

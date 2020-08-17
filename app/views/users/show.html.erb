@@ -1,4 +1,9 @@
 <h1> Welcome <%= @user.name %> </h1>
 
-<h3><%= link_to "List of all Karts", karts_path %></h3>
+<h3> Your karts: </h3>
 
+<ul>
+<% @user.karts.each do |kart| %>
+    <li><%= link_to kart.name, kart_path(kart.id) %></li>
+<% end %>
+</ul>
