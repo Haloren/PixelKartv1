@@ -25,6 +25,18 @@ class SessionsController < ApplicationController
         end
     end
 
+    def create_omniauth
+        # byebug
+        omniauth = request.env['omniauth.auth'][:info]
+        user = User.find_or_create_by(email: omniauth[:email]) do |u|
+            u.name = omniauth[:name] 
+            u.password = SecureRandom.hex # generates a random hexadecimal string
+        end
+        session[:user_id] = user.id
+        @user = current_user
+        redirect_to user_path(@user.id)
+    end
+
     def destroy
         session.clear
         redirect_to root_path

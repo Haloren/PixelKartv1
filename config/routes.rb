@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'sessions#index'
   
+  get '/auth/google_oauth2/callback', to: 'sessions#create_omniauth'
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
-  resources :garages
+  # resources :garages
   resources :reviews
   resources :karts do
     resources :reviews, only: [:new, :index]
