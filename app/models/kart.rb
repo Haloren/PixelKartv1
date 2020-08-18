@@ -7,6 +7,11 @@ class Kart < ApplicationRecord
 
   accepts_nested_attributes_for :garage
 
+  def garage_attributes=(attributes)
+    self.garage = Garage.find_or_create_by(attributes) if !attributes['name'].empty?
+    self.garage
+  end
+
   validates :name, presence: true, uniqueness: true
   validates :driver, presence: true
   validates :color, presence: true

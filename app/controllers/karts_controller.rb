@@ -18,17 +18,19 @@ class KartsController < ApplicationController
 
         @kart = Kart.new
         # byebug
-        @kart.build_garage #Doesn't work? this should be a nested attribute?
+        @kart.build_garage 
     end
 
     def create
+        @user = current_user
+        # byebug
         @kart = Kart.new(kart_params)
         @kart.user_id = session[:user_id]
 
         if @kart.save
             redirect_to kart_path(@kart)
         else
-            flash[:message] = @kart.errors.full_messages
+            @kart.errors.full_messages
             render :new
         end
     end
