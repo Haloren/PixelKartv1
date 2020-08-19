@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
+  get '/how_to_use', to: 'users#how_to_use'
+
   # resources :garages
   resources :reviews
   resources :karts do
