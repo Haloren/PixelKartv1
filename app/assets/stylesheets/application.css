@@ -14,11 +14,4 @@
  *= require_self
  */
 
- /* use with html <div id="block"></div> */
- #block {
-     width: 20px;
-     height: 20px;
-     margin: 0 auto;
-     background-color: red;
-     box-shadow:4px 5px 10px 0 gray;
- }
+ 
