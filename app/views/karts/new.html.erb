@@ -1,7 +1,9 @@
 <h1> Build a Kart </h1>
 
 <div class="flashmessage">
-    <%= @kart.errors.full_messages %>
+    <% if @kart.errors.full_messages != [] %>
+        <%= @kart.errors.full_messages %>
+    <% end %>
 </div>
 
 <%= form_for @kart do |f| %>

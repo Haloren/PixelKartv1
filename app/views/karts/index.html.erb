@@ -4,6 +4,7 @@
     <% @karts.each do |kart| %>
         <li> 
             <%= link_to kart.name, kart_path(kart.id) %> |
+            <%= Garage.find_by_id(kart.garage_id).name %> |
             <%= link_to "Review this kart", new_kart_review_path(kart.id) %> |
             <%= link_to "Previous Reviews for this kart", kart_reviews_path(kart.id) %> |
         </li>
