@@ -8,4 +8,5 @@ class Review < ApplicationRecord
   validates :kart, uniqueness: { scope: :user }
 
   RATING = [1, 2, 3, 4]
+
 end

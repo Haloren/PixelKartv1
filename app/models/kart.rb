@@ -23,4 +23,6 @@ class Kart < ApplicationRecord
   BODIES = ['Body1', 'Body2']
   WHEELS = ['Wheels1', 'Wheels2']
 
+  scope :avg_rating, -> { left_joins(:reviews).group(:id).order("avg(rating) desc") }
+
 end

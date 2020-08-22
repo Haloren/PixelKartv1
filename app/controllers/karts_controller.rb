@@ -3,7 +3,7 @@ class KartsController < ApplicationController
     def index
         @user = current_user
 
-        @karts = Kart.all
+        @karts = Kart.avg_rating 
     end
 
     def show
