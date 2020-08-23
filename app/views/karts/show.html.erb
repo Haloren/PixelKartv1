@@ -11,39 +11,37 @@
 |
 <div class="builder">
     <% if @kart.driver == "Driver1" %>  
-        <img class="driver" <%= image_tag ("Driver1.png") %> 
+        <%= image_tag ("Driver1.png"), class:"driver" %> 
     <% else %>
-        <img class="driver" <%= image_tag ("Driver2.png") %> 
+        <%= image_tag ("Driver2.png"), class:"driver" %> 
     <% end %>
 
     <% if @kart.body == "Body1" && @kart.color == "Red" %>
-        <img class="color" <%= image_tag ("Body1Red.png") %> 
+        <%= image_tag ("Body1Red.png"), class:"color" %> 
     <% elsif @kart.body == "Body1" && @kart.color == "Blue" %>
-        <img class="color" <%= image_tag ("Body1Blue.png") %> 
+        <%= image_tag ("Body1Blue.png"), class:"color" %> 
     <% elsif @kart.body == "Body1" && @kart.color == "Purple"%>
-        <img class="color" <%= image_tag ("Body1Purple.png") %> 
+        <%= image_tag ("Body1Purple.png"), class:"color" %> 
     <% end %>
-    
     <% if @kart.body == "Body2" && @kart.color == "Red" %>
-        <img class="color" <%= image_tag ("Body2Red.png") %> 
+        <%= image_tag ("Body2Red.png"), class:"color" %> 
     <% elsif @kart.body == "Body2" && @kart.color == "Blue" %>
-        <img class="color" <%= image_tag ("Body2Blue.png") %> 
+        <%= image_tag ("Body2Blue.png"), class:"color" %> 
     <% elsif @kart.body == "Body2" && @kart.color == "Purple" %>
-        <img class="color" <%= image_tag ("Body2Purple.png") %> 
+        <%= image_tag ("Body2Purple.png"), class:"color" %> 
     <% end %>
 
     <% if @kart.body == "Body1" %>
-        <img class="body" <%= image_tag ("Body1.png") %>
+        <%= image_tag ("Body1.png"), class:"body" %>
     <% else %>
-        <img class="body" <%= image_tag ("Body2.png") %>
+        <%= image_tag ("Body2.png"), class:"body" %>
     <% end %>
 
     <% if @kart.wheels == "Wheels1" %>
-        <img class="wheels" <%= image_tag ("Wheels1.png") %>
+        <%= image_tag ("Wheels1.png"), class:"wheels" %>
     <% else %>
-        <img class="wheels" <%= image_tag ("Wheel2.png") %> 
+        <%= image_tag ("Wheel2.png"), class:"wheels" %> 
     <% end %>
-
 </div>
 
 
