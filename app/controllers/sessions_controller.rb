@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to user_path(user)
         else    
-            flash[:message] = "Incorrect Email and/or Password"
+            flash[:message] = "Incorrect Email and/or Password" # maybe add a note that they may have logged in with Google?
             redirect_to login_path
         end
     end
