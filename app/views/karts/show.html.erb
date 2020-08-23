@@ -1,10 +1,52 @@
 <h1> <%= @kart.name %> </h1>
 <h3> 
 | <%= @kart.driver %> 
+<%# Driver1 black / Driver 2 white %>
 | <%= @kart.color %> 
+<%# Color1 red / Color2 blue / Color3 purple %>
 | <%= @kart.body %> 
+<%# Body1 sport / Body2 curved %>
 | <%= @kart.wheels %> 
+<%# Wheels1 standard / Wheels2 sport %>
 |
+<div class="builder">
+    <% if @kart.driver == "Driver1" %>  
+        <img class="driver" <%= image_tag ("Driver1.png") %> 
+    <% else %>
+        <img class="driver" <%= image_tag ("Driver2.png") %> 
+    <% end %>
+
+    <% if @kart.body == "Body1" && @kart.color == "Red" %>
+        <img class="color" <%= image_tag ("Body1Red.png") %> 
+    <% elsif @kart.body == "Body1" && @kart.color == "Blue" %>
+        <img class="color" <%= image_tag ("Body1Blue.png") %> 
+    <% elsif @kart.body == "Body1" && @kart.color == "Purple"%>
+        <img class="color" <%= image_tag ("Body1Purple.png") %> 
+    <% end %>
+    
+    <% if @kart.body == "Body2" && @kart.color == "Red" %>
+        <img class="color" <%= image_tag ("Body2Red.png") %> 
+    <% elsif @kart.body == "Body2" && @kart.color == "Blue" %>
+        <img class="color" <%= image_tag ("Body2Blue.png") %> 
+    <% elsif @kart.body == "Body2" && @kart.color == "Purple" %>
+        <img class="color" <%= image_tag ("Body2Purple.png") %> 
+    <% end %>
+
+    <% if @kart.body == "Body1" %>
+        <img class="body" <%= image_tag ("Body1.png") %>
+    <% else %>
+        <img class="body" <%= image_tag ("Body2.png") %>
+    <% end %>
+
+    <% if @kart.wheels == "Wheels1" %>
+        <img class="wheels" <%= image_tag ("Wheels1.png") %>
+    <% else %>
+        <img class="wheels" <%= image_tag ("Wheel2.png") %> 
+    <% end %>
+
+</div>
+
+
 </h3>
 
 <h3> Reviews for <%= @kart.name %>: </h3>
