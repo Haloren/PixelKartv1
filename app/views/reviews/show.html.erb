@@ -1,4 +1,4 @@
-<h1> Review for </h1>
+<h1> Review for <%= Kart.find_by_id(@review.kart_id).name %> </h1>
 
 <h3> Review Rating: <%= @review.rating %> </h3>
 <h3> Review Content: <%= @review.content %> </h3>
