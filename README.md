@@ -1,6 +1,6 @@
 # Pixel Kart v1
 ### Youtube Video Demo: coming soon
-Build a Pixel <br>
+Build a Pixel Kart<br>
 
 # Install Instructions (for local environment)
 1. If you'd like to check this out yourself fork it from GitHub 
