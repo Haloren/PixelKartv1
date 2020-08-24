@@ -1,5 +1,7 @@
 <h1> Simple Pixel Kart v1</h1>
+<% if !logged_in? %>
 <h4>| <%= link_to "BACK to Login", login_path %> | </h4>
+<% end %>
 <hr>
 <p> Youtube Video Demo: coming soon </p>
 
@@ -46,7 +48,9 @@ If you already have an account Login with your email & password.
 </ol>
 
 <hr>
+<% if !logged_in? %>
 <h4>| <%= link_to "Signup", signup_path %> | <%= link_to "Login", login_path %> | </h4>
+<% end %>
 <hr>
 
 <h3>Contributors Guide</h3>
