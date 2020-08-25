@@ -1,20 +1,22 @@
-<h1> Login </h1>
+<div class="con-login">
+    <h1> Login </h1>
 
-<div class="flashmessage">
-    <%= flash[:message] %>
+    <div class="flashmessage">
+        <%= flash[:message] %>
+    </div>
+
+    <%= form_for :user do |f|%>
+        
+        <%= f.email_field :email, placeholder: "Email", required: true, class: "con-input" %>
+        <%= f.password_field :password, placeholder: "Password", required: true, class: "con-input" %>
+        <%= submit_tag "Login", class: "submitbtn" %>
+        
+    <% end %>
+
+    <h4> <%= link_to "Login with Google", "/auth/google_oauth2" %> </h4>
+
+    <h4><%= link_to "Sign Up", signup_path %></h4>
 </div>
-
-<%= form_for :user do |f|%>
-
-    <%= f.email_field :email, placeholder: "Email", required: true %>
-    <%= f.password_field :password, placeholder: "Password", required: true %>
-
-    <%= submit_tag "Login" %>
-<% end %>
-
-<h4> <%= link_to "Login with Google", "/auth/google_oauth2" %> </h4>
-
-<h4><%= link_to "Sign Up", signup_path %></h4>
 
 <hr>
 <h5><%= link_to "Help?", how_to_use_path %></h5>

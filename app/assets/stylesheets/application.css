@@ -13,7 +13,57 @@
  *= require_tree .
  *= require_self
  */
+body {
+    background: #f4f3f5;
+}
 
+
+/* LOGIN and SIGNUP */
+
+.con-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 40px;
+    padding: 35px;
+    max-width: 400px;
+    text-decoration: none;
+}
+
+.con-input {
+    color: #000;
+    text-decoration: none;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    background: #233a79;
+    color: #ffffff;
+    border-radius: 18px;
+    font-size: 1.5rem;
+}
+
+.submitbtn {
+    background: #02126d;
+    color: #ffffff;
+    border-color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 10px;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all .25s ease;
+}
+    .submitbtn:hover{
+        background: #065BC9;
+        transform: transform: scale(.99);
+    }
+
+
+/* BUILD A KART */
 .builder {
     height: 200px;
     width: 200px;
