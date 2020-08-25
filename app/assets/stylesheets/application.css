@@ -19,7 +19,7 @@ body {
 }
 
 li {
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
     justify-content: center;
     margin-top: 10px;
@@ -27,7 +27,6 @@ li {
     width: auto;
     padding: 14px 20px;
     background: #78819b;
-    color: #ffffff;
     border-radius: 18px;
     font-size: 1.5rem;
 }
@@ -39,12 +38,22 @@ li {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    margin: 0;
+    max-width: 400px;
     border-radius: 40px;
     padding: 35px;
-    max-width: 400px;
     text-decoration: none;
+    
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .con-input {
     color: #000;
