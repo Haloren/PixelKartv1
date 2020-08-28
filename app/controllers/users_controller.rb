@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+    before_action :set_user, only: [:how_to_use]
+    
     def show 
         # byebug
         @user = User.find_by(id: params[:id]) 
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
+    # SIGNUP
     def create
         @user = User.new(user_params)
 
@@ -23,7 +25,6 @@ class UsersController < ApplicationController
     end
 
     def how_to_use
-        @user = current_user
     end
 
 private

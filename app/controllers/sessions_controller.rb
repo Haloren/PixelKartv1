@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
-   
+    before_action :set_user, only: [:index]
+    
     def index
-        @user = current_user
         if logged_in?
           redirect_to user_path(@user.id)
         else
@@ -12,11 +12,13 @@ class SessionsController < ApplicationController
     def new
     end
 
+    # LOGIN
     def create
         # byebug
         user = User.find_by(email: params[:user][:email])
 
-        if user.try(:authenticate, params[:user][:password])
+        # @user && @user.authenticate(params[:user][:password])
+        if user.try(:authenticate, params[:user][:password]) # activesupport method if the user is !nil authenticate params
             session[:user_id] = user.id
             redirect_to user_path(user)
         else    

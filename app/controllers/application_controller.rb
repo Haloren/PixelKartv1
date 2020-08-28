@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-helper_method :current_user, :logged_in?, :authenticate
+helper_method :current_user, :logged_in?, :authenticate, :set_user
 
 private
 
@@ -13,6 +13,10 @@ private
 
     def authenticate
         redirect_to login_path if !logged_in?
+    end
+
+    def set_user
+        @user = current_user
     end
 
 end

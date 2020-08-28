@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
+    before_action :set_user, only: [:index, :show, :new]
 
     def index
-        @user = current_user
         # byebug
         if @kart = Kart.find_by(id: params[:kart_id]) #if we don't have an id it returns nil
             @reviews = @kart.reviews 
@@ -11,15 +11,12 @@ class ReviewsController < ApplicationController
     end
 
     def show
-        @user = current_user
         # byebug
         @review = Review.find_by(id: params[:id])
         # byebug
     end
     
     def new
-        @user = current_user
-
         @kart = Kart.find_by(id: params[:kart_id])
         # byebug
         @review = @kart.reviews.build #review belongs_to a kart

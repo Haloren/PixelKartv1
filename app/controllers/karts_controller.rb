@@ -1,28 +1,22 @@
 class KartsController < ApplicationController
+    before_action :set_user, only: [:index, :show, :new, :create]
 
     def index
-        @user = current_user
-
         @karts = Kart.avg_rating 
     end
 
     def show
-        @user = current_user
-
         # byebug
         @kart = Kart.find_by(id: params[:id])
     end
 
     def new
-        @user = current_user
-
         @kart = Kart.new
         # byebug
         @kart.build_garage 
     end
 
     def create
-        @user = current_user
         # byebug
         @kart = Kart.new(kart_params)
         @kart.user_id = session[:user_id]
