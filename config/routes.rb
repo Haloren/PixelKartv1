@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   get '/how_to_use', to: 'users#how_to_use'
 
   # resources :garages
-  resources :reviews
+  resources :reviews, only: [:index, :show, :new, :create]
   resources :karts do
     resources :reviews, only: [:new, :index]
   end
-  resources :users
+  resources :users, only: [:show, :new, :create]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
