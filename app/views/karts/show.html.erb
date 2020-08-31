@@ -1,17 +1,10 @@
 <h1> <%= @kart.name %> </h1>
 <h3> 
 | <%= @kart.driver %> 
-<%# Driver1 black / Driver 2 white %>
 | <%= @kart.color %> 
-<%# Color1 red / Color2 blue / Color3 purple %>
 | <%= @kart.body %> 
-<%# Body1 sport / Body2 curved %>
 | <%= @kart.wheels %> 
-<%# Wheels1 standard / Wheels2 sport %>
 |
-
-<%# put this into a view helper and refactor code %>
-<%# helper method to return the driver, body, color, & wheels and then have it return the image %>
 <div class="builder">
     <% if @kart.driver == "Driver1" %>  
         <%= image_tag ("Driver1.png"), class:"driver" %> 
