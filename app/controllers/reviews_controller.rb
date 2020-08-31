@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
     before_action :set_user, only: [:index, :show, :new]
+    before_action :authenticate
 
     def index
         # byebug

@@ -1,6 +1,7 @@
 class KartsController < ApplicationController
     before_action :set_user, only: [:index, :show, :new, :create]
-
+    before_action :authenticate
+    
     def index
         @karts = Kart.avg_rating 
     end
